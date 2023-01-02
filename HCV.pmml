@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="sarbb_arcy27j">
+    <Application name="KNIME" version="4.6.4"/>
+  </Header>
+  <DataDictionary numberOfFields="14">
+    <DataField name="Category" optype="categorical" dataType="string">
+      <Value value="Blood Donor"/>
+      <Value value="suspect Blood Donor"/>
+      <Value value="Hepatitis"/>
+      <Value value="Fibrosis"/>
+      <Value value="Cirrhosis"/>
+    </DataField>
+    <DataField name="Age" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-2.825244373141813" rightMargin="2.942969626627427"/>
+    </DataField>
+    <DataField name="ALB" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-4.626217167676916" rightMargin="7.025575110878075"/>
+    </DataField>
+    <DataField name="ALP" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-2.2195320182283833" rightMargin="13.583877558480621"/>
+    </DataField>
+    <DataField name="ALT" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-1.082203207537912" rightMargin="11.664414405980486"/>
+    </DataField>
+    <DataField name="AST" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-0.7309107551387912" rightMargin="8.740030974803918"/>
+    </DataField>
+    <DataField name="BIL" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-0.5386401299262439" rightMargin="12.331693421071902"/>
+    </DataField>
+    <DataField name="CHE" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-3.0723876448050804" rightMargin="3.7237724844077675"/>
+    </DataField>
+    <DataField name="CHOL" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-3.5042223107017545" rightMargin="3.8300046306352487"/>
+    </DataField>
+    <DataField name="CREA" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-1.472939150091635" rightMargin="20.05404103833661"/>
+    </DataField>
+    <DataField name="GGT" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-0.6409162853502157" rightMargin="11.184684372469253"/>
+    </DataField>
+    <DataField name="PROT" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-5.046904180278366" rightMargin="3.32619820543707"/>
+    </DataField>
+    <DataField name="m" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-1.2575603162605247" rightMargin="0.7938974940848929"/>
+    </DataField>
+    <DataField name="f" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-0.7938974940848939" rightMargin="1.2575603162605251"/>
+    </DataField>
+  </DataDictionary>
+  <TreeModel modelName="DecisionTree" functionName="classification" splitCharacteristic="binarySplit" missingValueStrategy="lastPrediction" noTrueChildStrategy="returnNullPrediction">
+    <MiningSchema>
+      <MiningField name="Age" invalidValueTreatment="asIs"/>
+      <MiningField name="ALB" invalidValueTreatment="asIs"/>
+      <MiningField name="ALP" invalidValueTreatment="asIs"/>
+      <MiningField name="ALT" invalidValueTreatment="asIs"/>
+      <MiningField name="AST" invalidValueTreatment="asIs"/>
+      <MiningField name="BIL" invalidValueTreatment="asIs"/>
+      <MiningField name="CHE" invalidValueTreatment="asIs"/>
+      <MiningField name="CHOL" invalidValueTreatment="asIs"/>
+      <MiningField name="CREA" invalidValueTreatment="asIs"/>
+      <MiningField name="GGT" invalidValueTreatment="asIs"/>
+      <MiningField name="PROT" invalidValueTreatment="asIs"/>
+      <MiningField name="m" invalidValueTreatment="asIs"/>
+      <MiningField name="f" invalidValueTreatment="asIs"/>
+      <MiningField name="Category" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <Node id="0" score="Blood Donor" recordCount="430.0">
+      <True/>
+      <ScoreDistribution value="Blood Donor" recordCount="373.0"/>
+      <ScoreDistribution value="suspect Blood Donor" recordCount="5.0"/>
+      <ScoreDistribution value="Hepatitis" recordCount="17.0"/>
+      <ScoreDistribution value="Fibrosis" recordCount="15.0"/>
+      <ScoreDistribution value="Cirrhosis" recordCount="20.0"/>
+      <Node id="1" score="Blood Donor" recordCount="386.0">
+        <SimplePredicate field="AST" operator="lessOrEqual" value="0.551927395582549"/>
+        <ScoreDistribution value="Blood Donor" recordCount="370.0"/>
+        <ScoreDistribution value="suspect Blood Donor" recordCount="2.0"/>
+        <ScoreDistribution value="Hepatitis" recordCount="7.0"/>
+        <ScoreDistribution value="Fibrosis" recordCount="4.0"/>
+        <ScoreDistribution value="Cirrhosis" recordCount="3.0"/>
+        <Node id="2" score="Blood Donor" recordCount="16.0">
+          <SimplePredicate field="ALT" operator="lessOrEqual" value="-0.7383903095160687"/>
+          <ScoreDistribution value="Blood Donor" recordCount="6.0"/>
+          <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+          <ScoreDistribution value="Hepatitis" recordCount="4.0"/>
+          <ScoreDistribution value="Fibrosis" recordCount="2.0"/>
+          <ScoreDistribution value="Cirrhosis" recordCount="3.0"/>
+          <Node id="3" score="Hepatitis" recordCount="8.0">
+            <SimplePredicate field="ALP" operator="lessOrEqual" value="-0.6208648762469646"/>
+            <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="4.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="2.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="1.0"/>
+            <Node id="4" score="Hepatitis" recordCount="5.0">
+              <SimplePredicate field="Age" operator="lessOrEqual" value="0.35721852328259507"/>
+              <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="4.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            </Node>
+            <Node id="7" score="Fibrosis" recordCount="3.0">
+              <SimplePredicate field="Age" operator="greaterThan" value="0.35721852328259507"/>
+              <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="2.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="1.0"/>
+            </Node>
+          </Node>
+          <Node id="8" score="Blood Donor" recordCount="8.0">
+            <SimplePredicate field="ALP" operator="greaterThan" value="-0.6208648762469646"/>
+            <ScoreDistribution value="Blood Donor" recordCount="6.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="2.0"/>
+            <Node id="9" score="Blood Donor" recordCount="6.0">
+              <SimplePredicate field="GGT" operator="lessOrEqual" value="0.6506793310514775"/>
+              <ScoreDistribution value="Blood Donor" recordCount="6.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            </Node>
+            <Node id="10" score="Cirrhosis" recordCount="2.0">
+              <SimplePredicate field="GGT" operator="greaterThan" value="0.6506793310514775"/>
+              <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="2.0"/>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="11" score="Blood Donor" recordCount="370.0">
+          <SimplePredicate field="ALT" operator="greaterThan" value="-0.7383903095160687"/>
+          <ScoreDistribution value="Blood Donor" recordCount="364.0"/>
+          <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+          <ScoreDistribution value="Hepatitis" recordCount="3.0"/>
+          <ScoreDistribution value="Fibrosis" recordCount="2.0"/>
+          <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+          <Node id="12" score="Blood Donor" recordCount="365.0">
+            <SimplePredicate field="GGT" operator="lessOrEqual" value="2.1279646855052556"/>
+            <ScoreDistribution value="Blood Donor" recordCount="362.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="2.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="1.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            <Node id="13" score="Blood Donor" recordCount="355.0">
+              <SimplePredicate field="AST" operator="lessOrEqual" value="0.30412355963637727"/>
+              <ScoreDistribution value="Blood Donor" recordCount="354.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="1.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            </Node>
+            <Node id="18" score="Blood Donor" recordCount="10.0">
+              <SimplePredicate field="AST" operator="greaterThan" value="0.30412355963637727"/>
+              <ScoreDistribution value="Blood Donor" recordCount="8.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="2.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+              <Node id="19" score="Blood Donor" recordCount="7.0">
+                <SimplePredicate field="CHE" operator="lessOrEqual" value="0.9037514034401952"/>
+                <ScoreDistribution value="Blood Donor" recordCount="7.0"/>
+                <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+                <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+                <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+              </Node>
+              <Node id="20" score="Hepatitis" recordCount="3.0">
+                <SimplePredicate field="CHE" operator="greaterThan" value="0.9037514034401952"/>
+                <ScoreDistribution value="Blood Donor" recordCount="1.0"/>
+                <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="Hepatitis" recordCount="2.0"/>
+                <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+                <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="21" score="Blood Donor" recordCount="5.0">
+            <SimplePredicate field="GGT" operator="greaterThan" value="2.1279646855052556"/>
+            <ScoreDistribution value="Blood Donor" recordCount="2.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="1.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="1.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            <Node id="22" score="suspect Blood Donor" recordCount="3.0">
+              <SimplePredicate field="CHOL" operator="lessOrEqual" value="-0.04182633960940674"/>
+              <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="1.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="1.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            </Node>
+            <Node id="23" score="Blood Donor" recordCount="2.0">
+              <SimplePredicate field="CHOL" operator="greaterThan" value="-0.04182633960940674"/>
+              <ScoreDistribution value="Blood Donor" recordCount="2.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+      <Node id="24" score="Cirrhosis" recordCount="44.0">
+        <SimplePredicate field="AST" operator="greaterThan" value="0.551927395582549"/>
+        <ScoreDistribution value="Blood Donor" recordCount="3.0"/>
+        <ScoreDistribution value="suspect Blood Donor" recordCount="3.0"/>
+        <ScoreDistribution value="Hepatitis" recordCount="10.0"/>
+        <ScoreDistribution value="Fibrosis" recordCount="11.0"/>
+        <ScoreDistribution value="Cirrhosis" recordCount="17.0"/>
+        <Node id="25" score="Cirrhosis" recordCount="16.0">
+          <SimplePredicate field="CHE" operator="lessOrEqual" value="-1.150058161959018"/>
+          <ScoreDistribution value="Blood Donor" recordCount="1.0"/>
+          <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+          <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+          <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+          <ScoreDistribution value="Cirrhosis" recordCount="14.0"/>
+          <Node id="26" score="Blood Donor" recordCount="2.0">
+            <SimplePredicate field="PROT" operator="lessOrEqual" value="-3.13887421185206"/>
+            <ScoreDistribution value="Blood Donor" recordCount="1.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="1.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+          </Node>
+          <Node id="27" score="Cirrhosis" recordCount="14.0">
+            <SimplePredicate field="PROT" operator="greaterThan" value="-3.13887421185206"/>
+            <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="14.0"/>
+          </Node>
+        </Node>
+        <Node id="28" score="Fibrosis" recordCount="28.0">
+          <SimplePredicate field="CHE" operator="greaterThan" value="-1.150058161959018"/>
+          <ScoreDistribution value="Blood Donor" recordCount="2.0"/>
+          <ScoreDistribution value="suspect Blood Donor" recordCount="2.0"/>
+          <ScoreDistribution value="Hepatitis" recordCount="10.0"/>
+          <ScoreDistribution value="Fibrosis" recordCount="11.0"/>
+          <ScoreDistribution value="Cirrhosis" recordCount="3.0"/>
+          <Node id="29" score="Fibrosis" recordCount="21.0">
+            <SimplePredicate field="CREA" operator="lessOrEqual" value="-0.04296562716504582"/>
+            <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="2.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="5.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="11.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="3.0"/>
+            <Node id="30" score="Hepatitis" recordCount="8.0">
+              <SimplePredicate field="ALP" operator="lessOrEqual" value="-1.112162583294913"/>
+              <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="5.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="3.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+              <Node id="31" score="Fibrosis" recordCount="4.0">
+                <SimplePredicate field="CHE" operator="lessOrEqual" value="0.5750511970573187"/>
+                <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="Hepatitis" recordCount="1.0"/>
+                <ScoreDistribution value="Fibrosis" recordCount="3.0"/>
+                <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+              </Node>
+              <Node id="34" score="Hepatitis" recordCount="4.0">
+                <SimplePredicate field="CHE" operator="greaterThan" value="0.5750511970573187"/>
+                <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="Hepatitis" recordCount="4.0"/>
+                <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+                <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="35" score="Fibrosis" recordCount="13.0">
+              <SimplePredicate field="ALP" operator="greaterThan" value="-1.112162583294913"/>
+              <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="2.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="8.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="3.0"/>
+              <Node id="36" score="Fibrosis" recordCount="11.0">
+                <SimplePredicate field="CHE" operator="lessOrEqual" value="1.6631622250833917"/>
+                <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+                <ScoreDistribution value="Fibrosis" recordCount="8.0"/>
+                <ScoreDistribution value="Cirrhosis" recordCount="3.0"/>
+                <Node id="37" score="Cirrhosis" recordCount="2.0">
+                  <SimplePredicate field="CHE" operator="lessOrEqual" value="-0.7828206900002184"/>
+                  <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+                  <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+                  <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+                  <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+                  <ScoreDistribution value="Cirrhosis" recordCount="2.0"/>
+                </Node>
+                <Node id="38" score="Fibrosis" recordCount="9.0">
+                  <SimplePredicate field="CHE" operator="greaterThan" value="-0.7828206900002184"/>
+                  <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+                  <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+                  <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+                  <ScoreDistribution value="Fibrosis" recordCount="8.0"/>
+                  <ScoreDistribution value="Cirrhosis" recordCount="1.0"/>
+                </Node>
+              </Node>
+              <Node id="41" score="suspect Blood Donor" recordCount="2.0">
+                <SimplePredicate field="CHE" operator="greaterThan" value="1.6631622250833917"/>
+                <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+                <ScoreDistribution value="suspect Blood Donor" recordCount="2.0"/>
+                <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+                <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+                <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="42" score="Hepatitis" recordCount="7.0">
+            <SimplePredicate field="CREA" operator="greaterThan" value="-0.04296562716504582"/>
+            <ScoreDistribution value="Blood Donor" recordCount="2.0"/>
+            <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+            <ScoreDistribution value="Hepatitis" recordCount="5.0"/>
+            <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+            <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            <Node id="43" score="Blood Donor" recordCount="2.0">
+              <SimplePredicate field="BIL" operator="lessOrEqual" value="-0.027791582582123192"/>
+              <ScoreDistribution value="Blood Donor" recordCount="2.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="0.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            </Node>
+            <Node id="44" score="Hepatitis" recordCount="5.0">
+              <SimplePredicate field="BIL" operator="greaterThan" value="-0.027791582582123192"/>
+              <ScoreDistribution value="Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="suspect Blood Donor" recordCount="0.0"/>
+              <ScoreDistribution value="Hepatitis" recordCount="5.0"/>
+              <ScoreDistribution value="Fibrosis" recordCount="0.0"/>
+              <ScoreDistribution value="Cirrhosis" recordCount="0.0"/>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+    </Node>
+  </TreeModel>
+</PMML>

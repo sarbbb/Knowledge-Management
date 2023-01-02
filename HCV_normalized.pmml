@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="sarbb_arcy27j">
+    <Application name="KNIME" version="4.6.4"/>
+  </Header>
+  <DataDictionary numberOfFields="13">
+    <DataField name="Age" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="19.0" rightMargin="77.0"/>
+    </DataField>
+    <DataField name="ALB" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="14.9" rightMargin="82.2"/>
+    </DataField>
+    <DataField name="ALP" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="11.3" rightMargin="416.6"/>
+    </DataField>
+    <DataField name="ALT" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.9" rightMargin="325.3"/>
+    </DataField>
+    <DataField name="AST" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="10.6" rightMargin="324.0"/>
+    </DataField>
+    <DataField name="BIL" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.8" rightMargin="254.0"/>
+    </DataField>
+    <DataField name="CHE" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.42" rightMargin="16.41"/>
+    </DataField>
+    <DataField name="CHOL" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.43" rightMargin="9.67"/>
+    </DataField>
+    <DataField name="CREA" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="8.0" rightMargin="1079.1"/>
+    </DataField>
+    <DataField name="GGT" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="4.5" rightMargin="650.9"/>
+    </DataField>
+    <DataField name="PROT" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="44.8" rightMargin="90.0"/>
+    </DataField>
+    <DataField name="m" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="f" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+  </DataDictionary>
+  <TransformationDictionary>
+    <DerivedField displayName="Age" name="Age*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="Age">
+        <LinearNorm orig="0.0" norm="-4.714831717893806"/>
+        <LinearNorm orig="1.0" norm="-4.6153797523805435"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="ALB" name="ALB*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="ALB">
+        <LinearNorm orig="0.0" norm="-7.205885889080621"/>
+        <LinearNorm orig="1.0" norm="-7.032753760127353"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="ALP" name="ALP*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="ALP">
+        <LinearNorm orig="0.0" norm="-2.6601402793110673"/>
+        <LinearNorm orig="1.0" norm="-2.6211483977993253"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="ALT" name="ALT*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="ALT">
+        <LinearNorm orig="0.0" norm="-1.117566819905873"/>
+        <LinearNorm orig="1.0" norm="-1.0782739172748053"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="AST" name="AST*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="AST">
+        <LinearNorm orig="0.0" norm="-1.0512425430692083"/>
+        <LinearNorm orig="1.0" norm="-1.0210225630757728"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="BIL" name="BIL*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="BIL">
+        <LinearNorm orig="0.0" norm="-0.5793046909088605"/>
+        <LinearNorm orig="1.0" norm="-0.5284739896805898"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="CHE" name="CHE*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="CHE">
+        <LinearNorm orig="0.0" norm="-3.716186669720507"/>
+        <LinearNorm orig="1.0" norm="-3.2628070747096434"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="CHOL" name="CHOL*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="CHOL">
+        <LinearNorm orig="0.0" norm="-4.777031112414366"/>
+        <LinearNorm orig="1.0" norm="-3.886955027300652"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="CREA" name="CREA*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="CREA">
+        <LinearNorm orig="0.0" norm="-1.6337232426202746"/>
+        <LinearNorm orig="1.0" norm="-1.6136252310541945"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="GGT" name="GGT*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="GGT">
+        <LinearNorm orig="0.0" norm="-0.7232417849792189"/>
+        <LinearNorm orig="1.0" norm="-0.7049472295061071"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="PROT" name="PROT*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="PROT">
+        <LinearNorm orig="0.0" norm="-13.34590831479278"/>
+        <LinearNorm orig="1.0" norm="-13.160662686790227"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="m" name="m*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="m">
+        <LinearNorm orig="0.0" norm="-1.2575603162605247"/>
+        <LinearNorm orig="1.0" norm="0.7938974940848929"/>
+      </NormContinuous>
+    </DerivedField>
+    <DerivedField displayName="f" name="f*" optype="continuous" dataType="double">
+      <Extension name="summary" extender="KNIME" value="Z-Score (Gaussian) normalization on 13 column(s)"/>
+      <NormContinuous field="f">
+        <LinearNorm orig="0.0" norm="-0.7938974940848939"/>
+        <LinearNorm orig="1.0" norm="1.2575603162605251"/>
+      </NormContinuous>
+    </DerivedField>
+  </TransformationDictionary>
+</PMML>

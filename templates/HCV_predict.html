@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* 清除浮动 */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+ 
+/* 响应式布局 layout - 在屏幕宽度小于 600px 时， 设置为上下堆叠元素 */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>HCV預測</h2>
+
+<div class="container">
+  <form action="{{url_for('home')}}", method="POST">
+  <div class="row">
+    <div class="col-25">
+        <label for="Age">Age</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="Age" name="Age" placeholder="年齡">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">Sex</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="Sex" name="Sex" placeholder="男性請填M；女性請填F">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">ALB(白蛋白)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="ALB" name="ALB" placeholder="生物參考區間(REFERENCE RANGE)：35～52g/L">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="fname">ALP(鹼性磷酸酶)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="ALP" name="ALP" placeholder="生物參考區間(REFERENCE RANGE)：34-104 U/L">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">ALT(丙氨酸轉氨酶)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="ALT" name="ALT" placeholder="生物參考區間(REFERENCE RANGE)：5-40 U/L">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">AST(天門冬安酸轉氨酶)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="AST" name="AST" placeholder="生物參考區間(REFERENCE RANGE)：5-40 U/L">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="fname">BIL(總膽紅素)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="BIL" name="BIL" placeholder="生物參考區間(REFERENCE RANGE)：5.1–17.0 µmol/L">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">CHE(膽鹼酯脢)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="CHE" name="CHE" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">CHOL(總膽固醇)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="CHOL" name="CHOL" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">CREA(肌酸酐)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="CREA" name="CREA" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">GGT(γ-穀氨醯基轉移酶)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="GGT" name="GGT" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <label for="lname">PROT(protien)</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="PROT" name="PROT" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="送出">
+  </div>
+  </form>
+</div>
+
+</body>
+</html>
